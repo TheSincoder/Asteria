@@ -1,0 +1,185 @@
+{% extends 'base.html.j2' %}
+
+{% block title %}
+    Main Page
+{% endblock %}
+
+{% block css%}
+    <link href="{{url_for('static',filename='css/create_character.css')}}" rel="stylesheet">
+    {% endblock%}
+
+{# {% block css %}
+main
+{% endblock %} #}
+
+{% block content %}
+<br>
+<h1 class="text-center"> Character Name </h1>
+<form action="{{url_for('main.create_character')}}" method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{form.name.label(class="form-label")}}
+            {{form.name(class="form-control")}}
+            {% for error in form.name.errors %}
+                <small style="color:red;">{{error}}</small>
+            {% endfor %}
+
+            <br>
+
+{# ###############################
+########## RACE FORM ##########
+############################### #}
+
+{# <div class = "container">
+<div class = "row">
+<div class = "col-4" id="race-img" >
+    <h1> Choose Race </h1>
+    <div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios1" value="human_male">
+  <label class="form-check-label" for="Radios1">
+    <img src="{{ url_for('static', filename='images/human_male.jpg')}}" alt="Human Male" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Human Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios2" value="human_female">
+  <label class="form-check-label" for="Radios2">
+    <img src="{{ url_for('static', filename='images/human_female.jpg')}}" alt="Human Male" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Human Female
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios3" value="human_female">
+  <label class="form-check-label" for="Radios3">
+    <img src="{{ url_for('static', filename='images/elf_male.jpg')}}" alt="Elf Male" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Elf male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios4" value="human_female">
+  <label class="form-check-label" for="Radios4">
+    <img src="{{ url_for('static', filename='images/elf_female.jpg')}}" alt="Elf Female" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Elf Female
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios5" value="dwarf_male">
+  <label class="form-check-label" for="Radios5">
+    <img src="{{ url_for('static', filename='images/dwarf_male.jpg')}}" alt="Dwarf Male" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Dwarf Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios6" value="dwarf_female">
+  <label class="form-check-label" for="Radios6">
+    <img src="{{ url_for('static', filename='images/dwarf_female.jpg')}}" alt="Dwarf Female" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Dwarf Female
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios8" value="orc_male">
+  <label class="form-check-label" for="Radios8">
+    <img src="{{ url_for('static', filename='images/orc_male.jpg')}}" alt="Orc Male" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Orc Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios8" value="orc_female">
+  <label class="form-check-label" for="Radios8">
+    <img src="{{ url_for('static', filename='images/orc_female.jpg')}}" alt="Orc Female" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Orc Female
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios9" value="rusyon_male">
+  <label class="form-check-label" for="Radios9">
+    <img src="{{ url_for('static', filename='images/rusyon_male.jpg')}}" alt="Rusyon Male" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Rusyon Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios10" value="rusyon_female">
+  <label class="form-check-label" for="Radios10">
+    <img src="{{ url_for('static', filename='images/rusyon_female.jpg')}}" alt="Rusyon Female" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Rusyon Female
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios11" value="ervakt">
+  <label class="form-check-label" for="Radios11">
+    <img src="{{ url_for('static', filename='images/ervakt.jpg')}}" alt="Ervakt" class="rounded-circle border border-dark" style="max-width:6vh;">
+    Ervakt
+  </label>
+</div>
+
+</div> #}
+
+ {{form.race.label}}
+ {% for subfield in form.race %}
+        {{subfield}}
+        {{subfield.label | safe }}
+    {% endfor %}
+<br><br>
+    {{form.char_class.label}}
+ {% for subfield in form.char_class %}
+        {{subfield}}
+        {{subfield.label | safe }}
+    {% endfor %}
+    <br>
+
+{# ###############################
+########## CLASS FORM ##########
+############################### #}
+
+{# <div class="col-4" id="race-img" >
+    <h1> Choose Class </h1>
+    
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Class" id="Class1" value="cleric">
+  <label class="form-check-label" for="Class1">
+    <img src="{{ url_for('static', filename='images/cleric.jpg')}}" alt="Cleric" class="rounded border border-dark" style="max-width:10vh;">
+    Cleric
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Class" id="Class2" value="mage">
+  <label class="form-check-label" for="Class2">
+    <img src="{{ url_for('static', filename='images/mage.jpg')}}" alt="Mage" class="rounded border border-dark" style="max-width:10vh;">
+    Mage
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Class" id="Class3" value="monk">
+  <label class="form-check-label" for="Class3">
+    <img src="{{ url_for('static', filename='images/monk.jpg')}}" alt="Monk" class="rounded border border-dark" style="max-width:10vh;">
+    Monk
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Class" id="Class4" value="ranger">
+  <label class="form-check-label" for="Class4">
+    <img src="{{ url_for('static', filename='images/ranger.jpg')}}" alt="Ranger" class="rounded border border-dark" style="max-width:10vh;">
+    Ranger
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Class" id="Class5" value="rogue">
+  <label class="form-check-label" for="Class5">
+    <img src="{{ url_for('static', filename='images/rogue.jpg')}}" alt="Rogue" class="rounded border border-dark" style="max-width:10vh;">
+    Rogue
+  </label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Class" id="Class6" value="warrior">
+  <label class="form-check-label" for="Class6">
+    <img src="{{ url_for('static', filename='images/warrior.jpg')}}" alt="Warrior" class="rounded border border-dark" style="max-width:10vh;">
+    Warrior
+  </label>
+</div> #}
+<br>
+    <div>
+        {{form.submit(class="bt btn-dark form-control")}}
+        </div>
+
+{% endblock %}

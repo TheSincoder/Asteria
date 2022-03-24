@@ -1,0 +1,32 @@
+{% extends 'base.html.j2' %}
+
+{% block title %}
+    Main Page
+{% endblock %}
+
+{% block css%}
+    <link href="{{url_for('static',filename='css/index.css')}}" rel="stylesheet">
+    {% endblock%}
+
+{# {% block css %}
+main
+{% endblock %} #}
+
+{% block content %}
+<br>
+  <h1> Shadows of Holy Light </h1>
+  <br> 
+  <p> Shadows of Holy Light is an Online RPG where you create a Character and 
+  set off on a solo adventure. </p>
+
+  <p> With FIVE unique races and FIVE unique classes, every play through should 
+  be a new experience as you find new items and make new decisions that create 
+  a unique ending! </p>
+
+  <p> Beware of the light! For behind the light lies the darkest shadow! </p>
+
+  <p> Create an account to get started! </p>
+
+
+
+{% endblock %}

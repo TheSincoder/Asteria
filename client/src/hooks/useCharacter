@@ -1,0 +1,31 @@
+import {useEffect} from 'react';
+import {getCharacter} from "../api/apiCharacter";
+import { CancelToken } from 'apisauce';
+
+
+
+export default function useCharacter(setError, data, setCharacter,) {
+   
+    useEffect(
+        ()=>{
+            const source = CancelToken.source()
+            const character=async()=>{
+                const response_object = await getCharacter(data, source.token)
+                if (response_object.data?.token){
+                    console.log('logged in, more letters');
+                    setCharacter(response_object.data);
+                    setError(response_object.error);                 
+                    
+                }
+            };
+            console.log('Character', data)
+            if (data){
+                character();
+            };
+            return ()=>{
+                source.cancel()
+            }
+        },
+        [ setCharacter, data, setError]
+    )
+}

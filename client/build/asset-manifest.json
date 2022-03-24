@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6b01f98a.css",
+    "main.js": "/static/js/main.bf393367.js",
+    "static/js/787.71df535f.chunk.js": "/static/js/787.71df535f.chunk.js",
+    "static/media/shadows.mp3": "/static/media/shadows.6ae6eb2440e9312547fd.mp3",
+    "static/media/Wax_Stamp-removebg.png": "/static/media/Wax_Stamp-removebg.9473a243f1dcbeabd0de.png",
+    "static/media/ranger.jpg": "/static/media/ranger.f48e090b03272403125f.jpg",
+    "static/media/monk.jpg": "/static/media/monk.510cd61a1386e0a94050.jpg",
+    "static/media/parchment.jpg": "/static/media/parchment.f952cf1e73e3a19109bc.jpg",
+    "static/media/warrior.jpg": "/static/media/warrior.82c6e3fe6c8b687d93c0.jpg",
+    "static/media/rogue.jpg": "/static/media/rogue.17d8566930928b2d163c.jpg",
+    "static/media/cleric.jpg": "/static/media/cleric.31407efd890f2e412de6.jpg",
+    "static/media/mage.jpg": "/static/media/mage.a04c1d29f5229c631b50.jpg",
+    "static/media/rusyon_female.jpg": "/static/media/rusyon_female.ea5b2985986cd72ad1aa.jpg",
+    "static/media/orc_male.jpg": "/static/media/orc_male.d0c49f9c01de2d54810f.jpg",
+    "static/media/rusyon_male.jpg": "/static/media/rusyon_male.b9df46736730fb659ba6.jpg",
+    "static/media/dwarf_male.jpg": "/static/media/dwarf_male.ebd3dd9efdcfbf157aa0.jpg",
+    "static/media/ShadowsIntoLight-Regular.ttf": "/static/media/ShadowsIntoLight-Regular.e8c09384ff0643bf385d.ttf",
+    "static/media/dwarf_female.jpg": "/static/media/dwarf_female.930693b58663815b8bb8.jpg",
+    "static/media/ervakt.jpg": "/static/media/ervakt.1d72f37829eb4213f28d.jpg",
+    "static/media/human_female.jpg": "/static/media/human_female.99f6ce7e7f5cf52d48f2.jpg",
+    "static/media/shadows-into-light-all-400-normal.woff": "/static/media/shadows-into-light-all-400-normal.c5d8738f7587e5d71d70.woff",
+    "static/media/orc_female.jpg": "/static/media/orc_female.af812d0ba15be325717c.jpg",
+    "static/media/shadows-into-light-latin-400-normal.woff2": "/static/media/shadows-into-light-latin-400-normal.720e9b3fbe2aea1eece8.woff2",
+    "static/media/human_male.jpg": "/static/media/human_male.6576aebbdb82a40076a9.jpg",
+    "index.html": "/index.html",
+    "main.6b01f98a.css.map": "/static/css/main.6b01f98a.css.map",
+    "main.bf393367.js.map": "/static/js/main.bf393367.js.map",
+    "787.71df535f.chunk.js.map": "/static/js/787.71df535f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b01f98a.css",
+    "static/js/main.bf393367.js"
+  ]
+}
